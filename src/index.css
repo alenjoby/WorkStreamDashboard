@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-secondary-200;
+  }
+  
+  body {
+    @apply bg-secondary-50 text-secondary-900 font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-secondary-200/50 p-6 backdrop-blur-sm;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:border-secondary-300 hover:scale-[1.02];
+  }
+  
+  .btn-primary {
+    @apply bg-secondary-800 hover:bg-secondary-900 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-secondary-50 text-secondary-700 font-medium px-6 py-3 rounded-xl border border-secondary-200 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-accent {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-secondary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80 backdrop-blur-sm;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center px-4 py-3 text-secondary-600 rounded-xl hover:bg-secondary-100/50 hover:text-secondary-900 transition-all duration-200;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-secondary-800 text-white shadow-md;
+  }
+  
+  .progress-bar {
+    @apply w-full bg-secondary-200 rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-2 bg-gradient-to-r from-primary-400 to-primary-600 transition-all duration-500;
+  }
+  
+  .stat-card {
+    @apply bg-gradient-to-br from-white to-primary-50/30 rounded-2xl p-6 border border-secondary-200/50 shadow-sm;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary-400;
+}
